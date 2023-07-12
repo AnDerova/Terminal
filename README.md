@@ -1,4 +1,4 @@
-## Homework Linux terminal (GitBash)
+## Homework Linux terminal (GitBash) - part 1
 **1. See the current working directory path**
 ```
 $ pwd
@@ -160,4 +160,165 @@ AnDer@DESKTOP-66P2OE0 MINGW64 /c/QA/dir_3
 $ date
 Mon Apr 17 00:46:51     2023
 ```
+**21 Send an HTTP request to the server**
+```
+$ curl http://162.55.220.72:5005/
+```
+**22 Write a script that will automatically execute steps 3-8,13**
+```
+# Create the file script.txt
+$ touch script.txt
+
+# Open a file
+vim script.txt
+
+# Write a script
+#!/bin/bash
+cd /c/QA/Terminal_HW/dir_1/dir_11/dir_22
+mkdir dir_31 dir_32 dir_33
+cd dir_33
+touch file1.txt file2.txt file3.txt file4.json file5.json
+mkdir dir1 dir2 dir3
+ls -la
+mv /c/QA/Terminal_HW/dir_1/dir_11/dir_22/dir_33/{file1.txt,file4.json} /c/QA/Terminal_HW/dir_1/dir_13
+
+# Make script executable
+$ chmod +x script.txt
+
+# Run a script
+$ ./script.txt
+```
+## Homework Linux terminal (GitBash) - part 2
+
+**1. Create the directory**
+```
+$ mkdir dir_1
+```
+**2. Go to the directory, which was created**
+```
+$ cd dir_1
+```
+**3. Create the directory inner_dir_1**
+```
+$ mkdir inner_dir_1
+```
+**4. See the current working directory path**
+```
+$ pwd
+```
+**5. Create the empty file tf_1.txt**
+```
+$ touch tf_1.txt
+```
+**6. Using the command cat, create file tf_2.txt, containing lines: the first 1, the second 2, the third 3**
+```
+$ cat > tf_2.txt
+the first 1
+the second 2
+the third 3
+```
+**7. Go to a directory inner_dir_1**
+```
+$ cd inner_dir_1
+```
+**8. Using the command cat, create file tf_3.txt, containing any lines**
+```
+$ cat > tf_3.txt
+All I know
+It's so unreal
+Watch you go
+I tried so hard and got so far
+But in the end, it doesn't even matter
+I had to fall to lose it all
+But in the end, it doesn't even matter
+```
+**9. Using the command cat, add to tf_3.txt line “the second 2”**
+```
+$ cat >> tf_3.txt
+the second 2
+```
+**10. Using the command cat, add to tf_3.txt line “the sec 2”**
+```
+$ cat >> tf_3.txt
+the sec 2
+```
+
+**11. Using the command cat, add to tf_2.txt line “the sec 3”**
+ ```
+$ cd .. && cat >> tf_2.txt
+the sec 3
+
+```
+**12. Using the command cat, add to tf_3.txt line “the SeCoNd 2”**
+```
+$ cd inner_dir_1 && cat >> tf_3.txt
+the SeCoNd 2
+```
+**13. Using the command cat, add to tf_2.txt line “the seConD 2”**
+```
+$ cd .. && cat >> tf_2.txt
+the seConD 2
+```
+**14. Create the text file tf_4.txt, containing 15 lines**
+```
+$ cat > tf_4.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+```
+**15. Create the text file tF_5.txt, containing 13 lines**
+```
+$ cat > tF_5.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+```
+
+16. Вывести список всех файлов в папке.
+ 17. Выйти из папки inner_dir_1
+ 18. Вывести содержимое файла tf_3.txt в терминал.
+ 19. Найти путь к файлу tf_4.txt
+ 20. Отчистить файл tf_4.txt от содержимого без удаления самого файла.
+ 21. Найти путь к файлам у которых есть  “tf” в названии.
+ 22. Найти путь к файлам у которых есть  “tf” в названии и буквы в любом регистре.
+ 23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
+ 24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
+ 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
+ 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
+ 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
+ 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
+ 29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
+ 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
+ 31. Найти все строки во всех файлах где нет комбинации “second”
+ 32. Найти только название и путь к файлам где нет комбинации “second”
+ 33. Вывести в терминал 4 последних строк любого текстового файла
+ 34. Вывести в терминал 4 первые строки любого текстового файла.
+ 35. Команда в одну строку. Создать папку и создать текстовый файл с содержиммым.
+ 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+ 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+ 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
+ 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
+ 40. Просто вывести в терминал строку “Good job!!”
 
