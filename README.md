@@ -247,7 +247,6 @@ the sec 2
  ```
 $ cd .. && cat >> tf_2.txt
 the sec 3
-
 ```
 **12. Using the command cat, add to tf_3.txt line “the SeCoNd 2”**
 ```
@@ -262,63 +261,136 @@ the seConD 2
 **14. Create the text file tf_4.txt, containing 15 lines**
 ```
 $ cat > tf_4.txt
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 ```
 **15. Create the text file tF_5.txt, containing 13 lines**
 ```
 $ cat > tF_5.txt
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
+```
+**16. Display the list of the contents of your current working directory**
+```
+$ ls -la
+total 6
+drwxr-xr-x 1 AnDer 197121   0 Jul 12 20:54 ./
+drwxr-xr-x 1 AnDer 197121   0 Jul 12 20:54 ../
+-rw-r--r-- 1 AnDer 197121  30 Jul 12 20:54 tF_5.txt
+-rw-r--r-- 1 AnDer 197121 193 Jul 12 20:41 tf_3.txt
+-rw-r--r-- 1 AnDer 197121  36 Jul 12 20:52 tf_4.txt
+```
+**17. Move up one  directory level**
+
+```
+$ cd ..
+```
+**18. Display contain of the file tf_3.txt**
+```
+$ cat inner_dir_1/tf_3.txt
+```
+**19. Find the path to the file tf_4.txt**
+```
+$ find . -name tf_4.txt
+./inner_dir_1/tf_4.txt
+```
+**20. Clear the file tf_4.txt from the contents without deleting the file itself**
+```
+$ > ./inner_dir_1/tf_4.txt
+```
+**21. Find the path to files that have "tf" in their names**
+```
+$ find . -name '*tf*'
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tf_4.txt
+./tf_1.txt
+./tf_2.txt
+```
+**22. Find the path to files that have "tf" in their names in a case-insensitive manner**
+```
+$ find . -iname '*tf*'
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tf_4.txt
+./inner_dir_1/tF_5.txt
+./tf_1.txt
+./tf_2.txt
+```
+**23. Find lines in files where there is a combination of letters "sec" in the current directory**
+```
+$ grep -r "sec"
+```
+**24. Find lines in files where there is a combination of letters "sec" in a case-insensitive manner in the current directory**
+```
+$ grep -i -r "sec"
+```
+**25. Find lines in files where there is only a combination of letters "sec" in the current directory**
+```
+$ grep -rw "sec"
+```
+**26. Find lines in files where there is only a combination of letters "sec" in a case-insensitive manner in the current directory**
+```
+$ grep -irw "sec"
+```
+**27. Find lines in files where there is a combination of letters "second" in the current directory**
+
+```
+$ grep -r "second"
+```
+**28. Find lines in files where there is a combination of letters "second" in a case-insensitive manner in the current directory**
+```
+$ grep -ir "second"
+```
+**29. Find lines in files where there is a combination of letters "second" in subdirectories of the current directory**
+
+```
+$ grep -r "second" ./*/*
+```
+**30. Find the name and path to files where there is a combination of letters "second" in the current directory**
+```
+$ grep -rl "second"
+```
+**31. Find lines in files where there isn't a combination of letters "second"**
+```
+$ grep -rv "second"
+```
+**32. Find the name and path to files where there isn't a combination of letters "second"**
+``` 
+$ grep -rL "second"
+```
+**33. Display the last 4 lines of any text file**
+```
+$ tail -n 4 ./*/tf_3.txt
 ```
 
-16. Вывести список всех файлов в папке.
- 17. Выйти из папки inner_dir_1
- 18. Вывести содержимое файла tf_3.txt в терминал.
- 19. Найти путь к файлу tf_4.txt
- 20. Отчистить файл tf_4.txt от содержимого без удаления самого файла.
- 21. Найти путь к файлам у которых есть  “tf” в названии.
- 22. Найти путь к файлам у которых есть  “tf” в названии и буквы в любом регистре.
- 23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
- 24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
- 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
- 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
- 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
- 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
- 29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
- 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
- 31. Найти все строки во всех файлах где нет комбинации “second”
- 32. Найти только название и путь к файлам где нет комбинации “second”
- 33. Вывести в терминал 4 последних строк любого текстового файла
- 34. Вывести в терминал 4 первые строки любого текстового файла.
- 35. Команда в одну строку. Создать папку и создать текстовый файл с содержиммым.
- 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
- 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
- 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
- 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
- 40. Просто вывести в терминал строку “Good job!!”
+**34. Display the first 4 lines of any text file**
+```
+$ head -n 4 ./*/tf_3.txt
+```
+
+**35. Command in a single line. Create a directory and create a text file with contents**
+
+```
+$ mkdir Hello && echo 'Hello' >> hello.txt
+```
+**36. Command in a single line. Move text files where there is a word "sec" to any directory**
+
+```
+$ grep -rwl "sec" ./* | xargs -I{} mv {} Hello
+```
+
+**37. Command in a single line. Cory text files where there is a word "sec" to any directory**
+```
+$ grep -rwl "sec" | xargs -I {} cp {} inner_dir_1
+```
+**38. Command in a single line. Find lines in files where there is a combination of letters "sec". Cory these lines to new text files**
+```
+$ grep -rh "sec" | xargs -I {} echo {} >> echo.txt
+```
+**39. Command in a single line. Delete files where there is a word "sec"**
+
+```
+$ grep -rwl "sec" | xargs -I {} rm {}
+```
+**40. Display the spring "Good Job!!" to the screen**
+```
+$ echo 'Goo job!!'
+```
+
+
 
